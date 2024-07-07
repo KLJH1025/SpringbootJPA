@@ -35,8 +35,8 @@ public class Episode {
     @JoinColumn(name = "webtoon_id")
     private Webtoon webtoon;
 
-//    @OneToMany(mappedBy = "comment")
-//    private List<Comment> commentList = new ArrayList<>();
+    @OneToMany(mappedBy = "episode")
+    private List<Comment> commentList = new ArrayList<>();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

@@ -54,4 +54,10 @@ public class Webtoon {
         this.updatedAt = updatedAt;
         this.noYouth = noYouth;
     }
+
+    public void update(String title, String publicationStatus, boolean noYouth) {
+        this.title = title;
+        this.publicationStatus = publicationStatus;
+        this.noYouth = noYouth;
+    }
 }
