@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -41,6 +42,7 @@ public class Member {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Builder
     public Member(String loginId, String password, String nickname, Integer age, LocalDateTime createdAt,
                   LocalDateTime updatedAt) {
         this.loginId = loginId;

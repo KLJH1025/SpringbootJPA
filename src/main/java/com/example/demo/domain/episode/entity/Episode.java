@@ -1,5 +1,6 @@
 package com.example.demo.domain.episode.entity;
 
+import com.example.demo.domain.comment.entity.Comment;
 import com.example.demo.domain.webtoon.entity.Webtoon;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -7,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -28,9 +31,12 @@ public class Episode {
     @Column(name = "postscript")
     private String postscript;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "webtoon_id")
     private Webtoon webtoon;
+
+//    @OneToMany(mappedBy = "comment")
+//    private List<Comment> commentList = new ArrayList<>();
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
